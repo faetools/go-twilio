@@ -23,14 +23,12 @@ components:
           nullable: true
           type: string
         date_generated:
-          description: The date and time when the alert was generated specified in
-            ISO 8601 format
+          description: The date and time when the alert was generated specified in ISO 8601 format
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the resource was last
-            updated
+          description: The ISO 8601 date and time in GMT when the resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -43,19 +41,18 @@ components:
           nullable: true
           type: string
         more_info:
-          description: The URL of the page in our Error Dictionary with more information
-            about the error condition
+          description: The URL of the page in our Error Dictionary with more information about the error condition
           nullable: true
           type: string
         request_method:
           description: The method used by the request that generated the alert
           enum:
-          - HEAD
-          - GET
-          - POST
-          - PATCH
-          - PUT
-          - DELETE
+            - HEAD
+            - GET
+            - POST
+            - PATCH
+            - PUT
+            - DELETE
           nullable: true
           type: string
         request_url:
@@ -113,14 +110,12 @@ components:
           nullable: true
           type: string
         date_generated:
-          description: The date and time when the alert was generated specified in
-            ISO 8601 format
+          description: The date and time when the alert was generated specified in ISO 8601 format
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the resource was last
-            updated
+          description: The ISO 8601 date and time in GMT when the resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -133,8 +128,7 @@ components:
           nullable: true
           type: string
         more_info:
-          description: The URL of the page in our Error Dictionary with more information
-            about the error condition
+          description: The URL of the page in our Error Dictionary with more information about the error condition
           nullable: true
           type: string
         request_headers:
@@ -144,12 +138,12 @@ components:
         request_method:
           description: The method used by the request that generated the alert
           enum:
-          - HEAD
-          - GET
-          - POST
-          - PATCH
-          - PUT
-          - DELETE
+            - HEAD
+            - GET
+            - POST
+            - PATCH
+            - PUT
+            - DELETE
           nullable: true
           type: string
         request_url:
@@ -221,8 +215,7 @@ components:
           nullable: true
           type: string
         event_data:
-          description: A JSON string that represents an object with additional data
-            about the event
+          description: A JSON string that represents an object with additional data about the event
           nullable: true
           type: object
         event_date:
@@ -294,36 +287,30 @@ paths:
       description: ''
       operationId: ListAlert
       parameters:
-      - description: 'Only show alerts for this log-level.  Can be: `error`, `warning`,
-          `notice`, or `debug`.'
-        in: query
-        name: LogLevel
-        schema:
-          type: string
-      - description: Only include alerts that occurred on or after this date and time.
-          Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`.
-          Queries for alerts older than 30 days are not supported.
-        in: query
-        name: StartDate
-        schema:
-          format: date-time
-          type: string
-      - description: Only include alerts that occurred on or before this date and
-          time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`.
-          Queries for alerts older than 30 days are not supported.
-        in: query
-        name: EndDate
-        schema:
-          format: date-time
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: 'Only show alerts for this log-level.  Can be: `error`, `warning`, `notice`, or `debug`.'
+          in: query
+          name: LogLevel
+          schema:
+            type: string
+        - description: Only include alerts that occurred on or after this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.
+          in: query
+          name: StartDate
+          schema:
+            format: date-time
+            type: string
+        - description: Only include alerts that occurred on or before this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported.
+          in: query
+          name: EndDate
+          schema:
+            format: date-time
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -359,17 +346,17 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://monitor.twilio.com
+      - url: https://monitor.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - error_code
-      - log_level
-      - alert_text
+        - sid
+        - error_code
+        - log_level
+        - alert_text
       pathType: list
   /v1/Alerts/{Sid}:
     description: Debugger alerts
@@ -377,15 +364,15 @@ paths:
       description: ''
       operationId: FetchAlert
       parameters:
-      - description: The SID of the Alert resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^NO[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Alert resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^NO[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -394,17 +381,17 @@ paths:
                 $ref: '#/components/schemas/monitor.v1.alert-instance'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://monitor.twilio.com
+      - url: https://monitor.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - error_code
-      - log_level
-      - alert_text
+        - sid
+        - error_code
+        - log_level
+        - alert_text
       pathType: instance
   /v1/Events:
     description: Debugger events
@@ -412,58 +399,51 @@ paths:
       description: Returns a list of events in the account, sorted by event-date.
       operationId: ListEvent
       parameters:
-      - description: Only include events initiated by this Actor. Useful for auditing
-          actions taken by specific users or API credentials.
-        in: query
-        name: ActorSid
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^US[0-9a-fA-F]{32}$
-          type: string
-      - description: Only include events of this [Event Type](https://www.twilio.com/docs/usage/monitor-events#event-types).
-        in: query
-        name: EventType
-        schema:
-          type: string
-      - description: Only include events that refer to this resource. Useful for discovering
-          the history of a specific resource.
-        in: query
-        name: ResourceSid
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
-          type: string
-      - description: Only include events that originated from this IP address. Useful
-          for tracking suspicious activity originating from the API or the Twilio
-          Console.
-        in: query
-        name: SourceIpAddress
-        schema:
-          type: string
-      - description: Only include events that occurred on or after this date. Specify
-          the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
-        in: query
-        name: StartDate
-        schema:
-          format: date-time
-          type: string
-      - description: Only include events that occurred on or before this date. Specify
-          the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
-        in: query
-        name: EndDate
-        schema:
-          format: date-time
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: Only include events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials.
+          in: query
+          name: ActorSid
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^US[0-9a-fA-F]{32}$
+            type: string
+        - description: 'Only include events of this [Event Type](https://www.twilio.com/docs/usage/monitor-events#event-types).'
+          in: query
+          name: EventType
+          schema:
+            type: string
+        - description: Only include events that refer to this resource. Useful for discovering the history of a specific resource.
+          in: query
+          name: ResourceSid
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
+            type: string
+        - description: Only include events that originated from this IP address. Useful for tracking suspicious activity originating from the API or the Twilio Console.
+          in: query
+          name: SourceIpAddress
+          schema:
+            type: string
+        - description: Only include events that occurred on or after this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          in: query
+          name: StartDate
+          schema:
+            format: date-time
+            type: string
+        - description: Only include events that occurred on or before this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          in: query
+          name: EndDate
+          schema:
+            format: date-time
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -499,17 +479,17 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://monitor.twilio.com
+      - url: https://monitor.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - event_type
-      - event_type
-      - description
+        - sid
+        - event_type
+        - event_type
+        - description
       pathType: list
   /v1/Events/{Sid}:
     description: Debugger events
@@ -517,15 +497,15 @@ paths:
       description: ''
       operationId: FetchEvent
       parameters:
-      - description: The SID of the Event resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^AE[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Event resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^AE[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -534,20 +514,20 @@ paths:
                 $ref: '#/components/schemas/monitor.v1.event'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://monitor.twilio.com
+      - url: https://monitor.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - event_type
-      - event_type
-      - description
+        - sid
+        - event_type
+        - event_type
+        - description
       pathType: instance
 servers:
-- url: https://monitor.twilio.com
+  - url: https://monitor.twilio.com
 x-maturity:
-- description: This product is Generally Available.
-  name: GA
+  - description: This product is Generally Available.
+    name: GA

@@ -28,8 +28,8 @@ components:
         state:
           description: Current state of this user
           enum:
-          - active
-          - deactivated
+            - active
+            - deactivated
           nullable: true
           type: string
         url:
@@ -62,13 +62,12 @@ paths:
       description: Fetch a frontline user
       operationId: FetchUser
       parameters:
-      - description: The SID of the User resource to fetch. This value can be either
-          the `sid` or the `identity` of the User resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the User resource to fetch. This value can be either the `sid` or the `identity` of the User resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -77,20 +76,19 @@ paths:
                 $ref: '#/components/schemas/frontline.v1.user'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Update an existing frontline user
       operationId: UpdateUser
       parameters:
-      - description: The SID of the User resource to update. This value can be either
-          the `sid` or the `identity` of the User resource to update.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the User resource to update. This value can be either the `sid` or the `identity` of the User resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -103,16 +101,13 @@ paths:
                   description: The string that you assigned to describe the User.
                   type: string
                 IsAvailable:
-                  description: Whether the User is available for new conversations.
-                    Set to `false` to prevent User from receiving new inbound conversations
-                    if you are using [Pool Routing](https://www.twilio.com/docs/frontline/handle-incoming-conversations#3-pool-routing).
+                  description: 'Whether the User is available for new conversations. Set to `false` to prevent User from receiving new inbound conversations if you are using [Pool Routing](https://www.twilio.com/docs/frontline/handle-incoming-conversations#3-pool-routing).'
                   type: boolean
                 State:
-                  description: Current state of this user. Can be either `active`
-                    or `deactivated`.
+                  description: Current state of this user. Can be either `active` or `deactivated`.
                   enum:
-                  - active
-                  - deactivated
+                    - active
+                    - deactivated
                   type: string
               title: UpdateUserRequest
               type: object
@@ -124,19 +119,18 @@ paths:
                 $ref: '#/components/schemas/frontline.v1.user'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://frontline-api.twilio.com
+      - url: https://frontline-api.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - identity
+        - sid
+        - identity
       pathType: instance
 servers:
-- url: https://frontline-api.twilio.com
+  - url: https://frontline-api.twilio.com
 x-maturity:
-- description: PLEASE NOTE that this is a Beta product that is subject to change.
-    Use it with caution.
-  name: Beta
+  - description: PLEASE NOTE that this is a Beta product that is subject to change. Use it with caution.
+    name: Beta

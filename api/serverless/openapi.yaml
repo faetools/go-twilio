@@ -10,20 +10,17 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Service resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Service resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Service resource
-            was last updated
+          description: The ISO 8601 date and time in GMT when the Service resource was last updated
           format: date-time
           nullable: true
           type: string
         domain_base:
-          description: The base domain name for this Service, which is a combination
-            of the unique name and a randomly generated string
+          description: The base domain name for this Service, which is a combination of the unique name and a randomly generated string
           nullable: true
           type: string
         friendly_name:
@@ -31,8 +28,7 @@ components:
           nullable: true
           type: string
         include_credentials:
-          description: Whether to inject Account credentials into a function invocation
-            context
+          description: Whether to inject Account credentials into a function invocation context
           nullable: true
           type: boolean
         links:
@@ -47,13 +43,11 @@ components:
           pattern: ^ZS[0-9a-fA-F]{32}$
           type: string
         ui_editable:
-          description: Whether the Service resource's properties and subresources
-            can be edited via the UI
+          description: Whether the Service resource's properties and subresources can be edited via the UI
           nullable: true
           type: boolean
         unique_name:
-          description: A user-defined string that uniquely identifies the Service
-            resource
+          description: A user-defined string that uniquely identifies the Service resource
           nullable: true
           type: string
         url:
@@ -72,14 +66,12 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Asset resource was
-            created
+          description: The ISO 8601 date and time in GMT when the Asset resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Asset resource was
-            last updated
+          description: The ISO 8601 date and time in GMT when the Asset resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -92,8 +84,7 @@ components:
           nullable: true
           type: object
         service_sid:
-          description: The SID of the Service that the Asset resource is associated
-            with
+          description: The SID of the Service that the Asset resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -122,16 +113,14 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         asset_sid:
-          description: The SID of the Asset resource that is the parent of the Asset
-            Version
+          description: The SID of the Asset resource that is the parent of the Asset Version
           maxLength: 34
           minLength: 34
           nullable: true
           pattern: ^ZH[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Asset Version resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Asset Version resource was created
           format: date-time
           nullable: true
           type: string
@@ -140,8 +129,7 @@ components:
           nullable: true
           type: string
         service_sid:
-          description: The SID of the Service that the Asset Version resource is associated
-            with
+          description: The SID of the Service that the Asset Version resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -160,12 +148,11 @@ components:
           nullable: true
           type: string
         visibility:
-          description: The access control that determines how the Asset Version can
-            be accessed
+          description: The access control that determines how the Asset Version can be accessed
           enum:
-          - public
-          - private
-          - protected
+            - public
+            - private
+            - protected
           nullable: true
           type: string
       type: object
@@ -179,34 +166,29 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         asset_versions:
-          description: The list of Asset Version resource SIDs that are included in
-            the Build
+          description: The list of Asset Version resource SIDs that are included in the Build
           items:
             type: object
           nullable: true
           type: array
         date_created:
-          description: The ISO 8601 date and time in GMT when the Build resource was
-            created
+          description: The ISO 8601 date and time in GMT when the Build resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Build resource was
-            last updated
+          description: The ISO 8601 date and time in GMT when the Build resource was last updated
           format: date-time
           nullable: true
           type: string
         dependencies:
-          description: A list of objects that describe the Dependencies included in
-            the Build
+          description: A list of objects that describe the Dependencies included in the Build
           items:
             type: object
           nullable: true
           type: array
         function_versions:
-          description: The list of Function Version resource SIDs that are included
-            in the Build
+          description: The list of Function Version resource SIDs that are included in the Build
           items:
             type: object
           nullable: true
@@ -217,15 +199,14 @@ components:
         runtime:
           description: The Runtime version that will be used to run the Build.
           enum:
-          - node8
-          - node10
-          - node12
-          - node14
+            - node8
+            - node10
+            - node12
+            - node14
           nullable: true
           type: string
         service_sid:
-          description: The SID of the Service that the Build resource is associated
-            with
+          description: The SID of the Service that the Build resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -241,9 +222,9 @@ components:
         status:
           description: The status of the Build
           enum:
-          - building
-          - completed
-          - failed
+            - building
+            - completed
+            - failed
           nullable: true
           type: string
         url:
@@ -262,8 +243,7 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         service_sid:
-          description: The SID of the Service that the Build resource is associated
-            with
+          description: The SID of the Service that the Build resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -279,9 +259,9 @@ components:
         status:
           description: The status of the Build
           enum:
-          - building
-          - completed
-          - failed
+            - building
+            - completed
+            - failed
           nullable: true
           type: string
         url:
@@ -307,20 +287,17 @@ components:
           pattern: ^ZB[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Environment resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Environment resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Environment resource
-            was last updated
+          description: The ISO 8601 date and time in GMT when the Environment resource was last updated
           format: date-time
           nullable: true
           type: string
         domain_name:
-          description: The domain name for all Functions and Assets deployed in the
-            Environment
+          description: The domain name for all Functions and Assets deployed in the Environment
           nullable: true
           type: string
         domain_suffix:
@@ -332,8 +309,7 @@ components:
           nullable: true
           type: object
         service_sid:
-          description: The SID of the Service that the Environment resource is associated
-            with
+          description: The SID of the Service that the Environment resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -347,8 +323,7 @@ components:
           pattern: ^ZE[0-9a-fA-F]{32}$
           type: string
         unique_name:
-          description: A user-defined string that uniquely identifies the Environment
-            resource
+          description: A user-defined string that uniquely identifies the Environment resource
           nullable: true
           type: string
         url:
@@ -374,14 +349,12 @@ components:
           pattern: ^ZB[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Deployment resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Deployment resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Deployment resource
-            was last updated
+          description: The ISO 8601 date and time in GMT when the Deployment resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -393,8 +366,7 @@ components:
           pattern: ^ZE[0-9a-fA-F]{32}$
           type: string
         service_sid:
-          description: The SID of the Service that the Deployment resource is associated
-            with
+          description: The SID of the Service that the Deployment resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -430,8 +402,7 @@ components:
           pattern: ^ZB[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Log resource was
-            created
+          description: The ISO 8601 date and time in GMT when the Log resource was created
           format: date-time
           nullable: true
           type: string
@@ -459,9 +430,9 @@ components:
         level:
           description: The log level
           enum:
-          - info
-          - warn
-          - error
+            - info
+            - warn
+            - error
           nullable: true
           type: string
         message:
@@ -476,8 +447,7 @@ components:
           pattern: ^RQ[0-9a-fA-F]{32}$
           type: string
         service_sid:
-          description: The SID of the Service that the Log resource is associated
-            with
+          description: The SID of the Service that the Log resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -506,14 +476,12 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Variable resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Variable resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Variable resource
-            was last updated
+          description: The ISO 8601 date and time in GMT when the Variable resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -529,8 +497,7 @@ components:
           nullable: true
           type: string
         service_sid:
-          description: The SID of the Service that the Variable resource is associated
-            with
+          description: The SID of the Service that the Variable resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -563,14 +530,12 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Function resource
-            was created
+          description: The ISO 8601 date and time in GMT when the Function resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the Function resource
-            was last updated
+          description: The ISO 8601 date and time in GMT when the Function resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -583,8 +548,7 @@ components:
           nullable: true
           type: object
         service_sid:
-          description: The SID of the Service that the Function resource is associated
-            with
+          description: The SID of the Service that the Function resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -613,14 +577,12 @@ components:
           pattern: ^AC[0-9a-fA-F]{32}$
           type: string
         date_created:
-          description: The ISO 8601 date and time in GMT when the Function Version
-            resource was created
+          description: The ISO 8601 date and time in GMT when the Function Version resource was created
           format: date-time
           nullable: true
           type: string
         function_sid:
-          description: The SID of the Function resource that is the parent of the
-            Function Version resource
+          description: The SID of the Function resource that is the parent of the Function Version resource
           maxLength: 34
           minLength: 34
           nullable: true
@@ -630,13 +592,11 @@ components:
           nullable: true
           type: object
         path:
-          description: The URL-friendly string by which the Function Version resource
-            can be referenced
+          description: The URL-friendly string by which the Function Version resource can be referenced
           nullable: true
           type: string
         service_sid:
-          description: The SID of the Service that the Function Version resource is
-            associated with
+          description: The SID of the Service that the Function Version resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -655,12 +615,11 @@ components:
           nullable: true
           type: string
         visibility:
-          description: The access control that determines how the Function Version
-            resource can be accessed
+          description: The access control that determines how the Function Version resource can be accessed
           enum:
-          - public
-          - private
-          - protected
+            - public
+            - private
+            - protected
           nullable: true
           type: string
       type: object
@@ -678,16 +637,14 @@ components:
           nullable: true
           type: string
         function_sid:
-          description: The SID of the Function that is the parent of the Function
-            Version
+          description: The SID of the Function that is the parent of the Function Version
           maxLength: 34
           minLength: 34
           nullable: true
           pattern: ^ZH[0-9a-fA-F]{32}$
           type: string
         service_sid:
-          description: The SID of the Service that the Function Version resource is
-            associated with
+          description: The SID of the Service that the Function Version resource is associated with
           maxLength: 34
           minLength: 34
           nullable: true
@@ -724,20 +681,18 @@ info:
 openapi: 3.0.1
 paths:
   /v1/Services:
-    description: The top-level resource for a Serverless application, which serves
-      as a container for the application environments.
+    description: The top-level resource for a Serverless application, which serves as a container for the application environments.
     get:
       description: Retrieve a list of all Services.
       operationId: ListService
       parameters:
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -773,9 +728,9 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new Service resource.
       operationId: CreateService
@@ -785,26 +740,20 @@ paths:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Service resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Service resource. It can be a maximum of 255 characters.
                   type: string
                 IncludeCredentials:
-                  description: Whether to inject Account credentials into a function
-                    invocation context. The default value is `true`.
+                  description: Whether to inject Account credentials into a function invocation context. The default value is `true`.
                   type: boolean
                 UiEditable:
-                  description: Whether the Service's properties and subresources can
-                    be edited via the UI. The default value is `false`.
+                  description: Whether the Service's properties and subresources can be edited via the UI. The default value is `false`.
                   type: boolean
                 UniqueName:
-                  description: A user-defined string that uniquely identifies the
-                    Service resource. It can be used as an alternative to the `sid`
-                    in the URL path to address the Service resource. This value must
-                    be 50 characters or less in length and be unique.
+                  description: A user-defined string that uniquely identifies the Service resource. It can be used as an alternative to the `sid` in the URL path to address the Service resource. This value must be 50 characters or less in length and be unique.
                   type: string
               required:
-              - UniqueName
-              - FriendlyName
+                - UniqueName
+                - FriendlyName
               title: CreateServiceRequest
               type: object
       responses:
@@ -815,38 +764,36 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - friendly_name
+        - sid
+        - unique_name
+        - friendly_name
       pathType: list
   /v1/Services/{ServiceSid}/Assets:
-    description: A wrapper that represents a static file and groups the different
-      Versions of the static file.
+    description: A wrapper that represents a static file and groups the different Versions of the static file.
     get:
       description: Retrieve a list of all Assets.
       operationId: ListAsset
       parameters:
-      - description: The SID of the Service to read the Asset resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Asset resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -882,30 +829,29 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new Asset resource.
       operationId: CreateAsset
       parameters:
-      - description: The SID of the Service to create the Asset resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the Service to create the Asset resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Asset resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Asset resource. It can be a maximum of 255 characters.
                   type: string
               required:
-              - FriendlyName
+                - FriendlyName
               title: CreateAssetRequest
               type: object
       responses:
@@ -916,16 +862,16 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.asset'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions:
     description: The content of an Asset.
@@ -933,30 +879,28 @@ paths:
       description: Retrieve a list of all Asset Versions.
       operationId: ListAssetVersion
       parameters:
-      - description: The SID of the Service to read the Asset Version resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Asset resource that is the parent of the Asset
-          Version resources to read.
-        in: path
-        name: AssetSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Asset Version resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Asset resource that is the parent of the Asset Version resources to read.
+          in: path
+          name: AssetSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -992,17 +936,17 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - path
-      - visibility
-      - date_created
+        - sid
+        - path
+        - visibility
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions/{Sid}:
     description: The content of an Asset.
@@ -1010,31 +954,30 @@ paths:
       description: Retrieve a specific Asset Version.
       operationId: FetchAssetVersion
       parameters:
-      - description: The SID of the Service to fetch the Asset Version resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Asset resource that is the parent of the Asset
-          Version resource to fetch.
-        in: path
-        name: AssetSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Asset Version resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZN[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Asset Version resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Asset resource that is the parent of the Asset Version resource to fetch.
+          in: path
+          name: AssetSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Asset Version resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZN[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1043,66 +986,65 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.asset.asset_version'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - path
-      - visibility
-      - date_created
+        - sid
+        - path
+        - visibility
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Assets/{Sid}:
     delete:
       description: Delete an Asset resource.
       operationId: DeleteAsset
       parameters:
-      - description: The SID of the Service to delete the Asset resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID that identifies the Asset resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to delete the Asset resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID that identifies the Asset resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
-    description: A wrapper that represents a static file and groups the different
-      Versions of the static file.
+        - Beta
+    description: A wrapper that represents a static file and groups the different Versions of the static file.
     get:
       description: Retrieve a specific Asset resource.
       operationId: FetchAsset
       parameters:
-      - description: The SID of the Service to fetch the Asset resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID that identifies the Asset resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Asset resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID that identifies the Asset resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1111,39 +1053,38 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.asset'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Update a specific Asset resource.
       operationId: UpdateAsset
       parameters:
-      - description: The SID of the Service to update the Asset resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID that identifies the Asset resource to update.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to update the Asset resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID that identifies the Asset resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Asset resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Asset resource. It can be a maximum of 255 characters.
                   type: string
               required:
-              - FriendlyName
+                - FriendlyName
               title: UpdateAssetRequest
               type: object
       responses:
@@ -1154,38 +1095,36 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.asset'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Builds:
-    description: A collection of Function Versions, Asset Versions, Dependencies,
-      and a Runtime that form a deployable unit.
+    description: A collection of Function Versions, Asset Versions, Dependencies, and a Runtime that form a deployable unit.
     get:
       description: Retrieve a list of all Builds.
       operationId: ListBuild
       parameters:
-      - description: The SID of the Service to read the Build resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Build resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1221,28 +1160,26 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
-      description: Create a new Build resource. At least one function version or asset
-        version is required.
+      description: Create a new Build resource. At least one function version or asset version is required.
       operationId: CreateBuild
       parameters:
-      - description: The SID of the Service to create the Build resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the Service to create the Build resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 AssetVersions:
-                  description: The list of Asset Version resource SIDs to include
-                    in the Build.
+                  description: The list of Asset Version resource SIDs to include in the Build.
                   items:
                     maxLength: 34
                     minLength: 34
@@ -1250,13 +1187,10 @@ paths:
                     type: string
                   type: array
                 Dependencies:
-                  description: A list of objects that describe the Dependencies included
-                    in the Build. Each object contains the `name` and `version` of
-                    the dependency.
+                  description: A list of objects that describe the Dependencies included in the Build. Each object contains the `name` and `version` of the dependency.
                   type: string
                 FunctionVersions:
-                  description: The list of the Function Version resource SIDs to include
-                    in the Build.
+                  description: The list of the Function Version resource SIDs to include in the Build.
                   items:
                     maxLength: 34
                     minLength: 34
@@ -1264,8 +1198,7 @@ paths:
                     type: string
                   type: array
                 Runtime:
-                  description: The Runtime version that will be used to run the Build
-                    resource when it is deployed.
+                  description: The Runtime version that will be used to run the Build resource when it is deployed.
                   type: string
               title: CreateBuildRequest
               type: object
@@ -1277,65 +1210,64 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.build'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - status
-      - date_created
+        - sid
+        - status
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Builds/{Sid}:
     delete:
       description: Delete a Build resource.
       operationId: DeleteBuild
       parameters:
-      - description: The SID of the Service to delete the Build resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Build resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZB[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to delete the Build resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Build resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZB[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
-    description: A collection of Function Versions, Asset Versions, Dependencies,
-      and a Runtime that form a deployable unit.
+        - Beta
+    description: A collection of Function Versions, Asset Versions, Dependencies, and a Runtime that form a deployable unit.
     get:
       description: Retrieve a specific Build resource.
       operationId: FetchBuild
       parameters:
-      - description: The SID of the Service to fetch the Build resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Build resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZB[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Build resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Build resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZB[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1344,16 +1276,16 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.build'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - status
-      - date_created
+        - sid
+        - status
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Builds/{Sid}/Status:
     description: The status of a Build resource.
@@ -1361,21 +1293,21 @@ paths:
       description: Retrieve a specific Build resource.
       operationId: FetchBuildStatus
       parameters:
-      - description: The SID of the Service to fetch the Build resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Build resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZB[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Build resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Build resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZB[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1384,37 +1316,35 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.build.build_status'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - status
+        - sid
+        - status
       pathType: instance
   /v1/Services/{ServiceSid}/Environments:
-    description: Represents a deployed build of a given set of Functions and/or Assets
-      at a specific URL.
+    description: Represents a deployed build of a given set of Functions and/or Assets at a specific URL.
     get:
       description: Retrieve a list of all environments.
       operationId: ListEnvironment
       parameters:
-      - description: The SID of the Service to read the Environment resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Environment resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1450,34 +1380,32 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new environment.
       operationId: CreateEnvironment
       parameters:
-      - description: The SID of the Service to create the Environment resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the Service to create the Environment resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 DomainSuffix:
-                  description: A URL-friendly name that represents the environment
-                    and forms part of the domain name. It can be a maximum of 16 characters.
+                  description: A URL-friendly name that represents the environment and forms part of the domain name. It can be a maximum of 16 characters.
                   type: string
                 UniqueName:
-                  description: A user-defined string that uniquely identifies the
-                    Environment resource. It can be a maximum of 100 characters.
+                  description: A user-defined string that uniquely identifies the Environment resource. It can be a maximum of 100 characters.
                   type: string
               required:
-              - UniqueName
+                - UniqueName
               title: CreateEnvironmentRequest
               type: object
       responses:
@@ -1488,49 +1416,46 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - domain_name
-      - build_sid
+        - sid
+        - unique_name
+        - domain_name
+        - build_sid
       pathType: list
   /v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments:
-    description: An association of a Build with an Environment so that the Build is
-      published in the Environment.
+    description: An association of a Build with an Environment so that the Build is published in the Environment.
     get:
       description: Retrieve a list of all Deployments.
       operationId: ListDeployment
       parameters:
-      - description: The SID of the Service to read the Deployment resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment used by the Deployment resources to
-          read.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Deployment resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment used by the Deployment resources to read.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1566,28 +1491,28 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new Deployment.
       operationId: CreateDeployment
       parameters:
-      - description: The SID of the Service to create the Deployment resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment for the Deployment.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to create the Deployment resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment for the Deployment.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1609,48 +1534,47 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.deployment'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - build_sid
-      - date_created
+        - sid
+        - build_sid
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments/{Sid}:
-    description: An association of a Build with an Environment so that the Build is
-      published in the Environment.
+    description: An association of a Build with an Environment so that the Build is published in the Environment.
     get:
       description: Retrieve a specific Deployment.
       operationId: FetchDeployment
       parameters:
-      - description: The SID of the Service to fetch the Deployment resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment used by the Deployment to fetch.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID that identifies the Deployment resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZD[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Deployment resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment used by the Deployment to fetch.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID that identifies the Deployment resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZD[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1659,16 +1583,16 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.deployment'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - build_sid
-      - date_created
+        - sid
+        - build_sid
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Logs:
     description: A record of an event that occurred related to a function invocation.
@@ -1676,52 +1600,48 @@ paths:
       description: Retrieve a list of all logs.
       operationId: ListLog
       parameters:
-      - description: The SID of the Service to read the Log resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the environment with the Log resources to read.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the function whose invocation produced the Log resources
-          to read.
-        in: query
-        name: FunctionSid
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: The date/time (in GMT, ISO 8601) after which the Log resources
-          must have been created. Defaults to 1 day prior to current date/time.
-        in: query
-        name: StartDate
-        schema:
-          format: date-time
-          type: string
-      - description: The date/time (in GMT, ISO 8601) before which the Log resources
-          must have been created. Defaults to current date/time.
-        in: query
-        name: EndDate
-        schema:
-          format: date-time
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Log resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the environment with the Log resources to read.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the function whose invocation produced the Log resources to read.
+          in: query
+          name: FunctionSid
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: The date/time (in GMT, ISO 8601) after which the Log resources must have been created. Defaults to 1 day prior to current date/time.
+          in: query
+          name: StartDate
+          schema:
+            format: date-time
+            type: string
+        - description: The date/time (in GMT, ISO 8601) before which the Log resources must have been created. Defaults to current date/time.
+          in: query
+          name: EndDate
+          schema:
+            format: date-time
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1757,11 +1677,11 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties: []
       pathType: list
@@ -1771,30 +1691,30 @@ paths:
       description: Retrieve a specific log.
       operationId: FetchLog
       parameters:
-      - description: The SID of the Service to fetch the Log resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the environment with the Log resource to fetch.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Log resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^NO[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Log resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the environment with the Log resource to fetch.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Log resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^NO[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1803,11 +1723,11 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.log'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties: []
       pathType: instance
@@ -1817,29 +1737,28 @@ paths:
       description: Retrieve a list of all Variables.
       operationId: ListVariable
       parameters:
-      - description: The SID of the Service to read the Variable resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment with the Variable resources to read.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Variable resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment with the Variable resources to read.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1875,44 +1794,42 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new Variable.
       operationId: CreateVariable
       parameters:
-      - description: The SID of the Service to create the Variable resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment in which the Variable resource exists.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to create the Variable resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment in which the Variable resource exists.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 Key:
-                  description: A string by which the Variable resource can be referenced.
-                    It can be a maximum of 128 characters.
+                  description: A string by which the Variable resource can be referenced. It can be a maximum of 128 characters.
                   type: string
                 Value:
-                  description: A string that contains the actual value of the Variable.
-                    It can be a maximum of 450 bytes in size.
+                  description: A string that contains the actual value of the Variable. It can be a maximum of 450 bytes in size.
                   type: string
               required:
-              - Key
-              - Value
+                - Key
+                - Value
               title: CreateVariableRequest
               type: object
       responses:
@@ -1923,82 +1840,82 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.variable'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - key
-      - date_created
+        - sid
+        - key
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables/{Sid}:
     delete:
       description: Delete a specific Variable.
       operationId: DeleteVariable
       parameters:
-      - description: The SID of the Service to delete the Variable resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment with the Variables to delete.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Variable resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZV[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to delete the Variable resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment with the Variables to delete.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Variable resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZV[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     description: A key and value pair that is specific to an Environment.
     get:
       description: Retrieve a specific Variable.
       operationId: FetchVariable
       parameters:
-      - description: The SID of the Service to fetch the Variable resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment with the Variable resource to fetch.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Variable resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZV[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Variable resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment with the Variable resource to fetch.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Variable resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZV[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2007,49 +1924,47 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.variable'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Update a specific Variable.
       operationId: UpdateVariable
       parameters:
-      - description: The SID of the Service to update the Variable resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment with the Variable resource to update.
-        in: path
-        name: EnvironmentSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Variable resource to update.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZV[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to update the Variable resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment with the Variable resource to update.
+          in: path
+          name: EnvironmentSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Variable resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZV[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 Key:
-                  description: A string by which the Variable resource can be referenced.
-                    It can be a maximum of 128 characters.
+                  description: A string by which the Variable resource can be referenced. It can be a maximum of 128 characters.
                   type: string
                 Value:
-                  description: A string that contains the actual value of the Variable.
-                    It can be a maximum of 450 bytes in size.
+                  description: A string that contains the actual value of the Variable. It can be a maximum of 450 bytes in size.
                   type: string
               title: UpdateVariableRequest
               type: object
@@ -2061,65 +1976,64 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment.variable'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - key
-      - date_created
+        - sid
+        - key
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Environments/{Sid}:
     delete:
       description: Delete a specific environment.
       operationId: DeleteEnvironment
       parameters:
-      - description: The SID of the Service to delete the Environment resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to delete the Environment resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
-    description: Represents a deployed build of a given set of Functions and/or Assets
-      at a specific URL.
+        - Beta
+    description: Represents a deployed build of a given set of Functions and/or Assets at a specific URL.
     get:
       description: Retrieve a specific environment.
       operationId: FetchEnvironment
       parameters:
-      - description: The SID of the Service to fetch the Environment resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Environment resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZE[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Environment resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Environment resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZE[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2128,39 +2042,37 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.environment'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - domain_name
-      - build_sid
+        - sid
+        - unique_name
+        - domain_name
+        - build_sid
       pathType: instance
   /v1/Services/{ServiceSid}/Functions:
-    description: A wrapper that represents a Serverless JavaScript function and groups
-      the different  and groups the different Versions of this code.
+    description: A wrapper that represents a Serverless JavaScript function and groups the different  and groups the different Versions of this code.
     get:
       description: Retrieve a list of all Functions.
       operationId: ListFunction
       parameters:
-      - description: The SID of the Service to read the Function resources from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Function resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -2196,30 +2108,29 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Create a new Function resource.
       operationId: CreateFunction
       parameters:
-      - description: The SID of the Service to create the Function resource under.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
+        - description: The SID of the Service to create the Function resource under.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Function resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Function resource. It can be a maximum of 255 characters.
                   type: string
               required:
-              - FriendlyName
+                - FriendlyName
               title: CreateFunctionRequest
               type: object
       responses:
@@ -2230,16 +2141,16 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.function'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions:
     description: The content of a Function.
@@ -2247,31 +2158,28 @@ paths:
       description: Retrieve a list of all Function Version resources.
       operationId: ListFunctionVersion
       parameters:
-      - description: The SID of the Service to read the Function Version resources
-          from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the function that is the parent of the Function Version
-          resources to read.
-        in: path
-        name: FunctionSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the Service to read the Function Version resources from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the function that is the parent of the Function Version resources to read.
+          in: path
+          name: FunctionSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -2307,17 +2215,17 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - path
-      - visibility
-      - date_created
+        - sid
+        - path
+        - visibility
+        - date_created
       pathType: list
   /v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}:
     description: The content of a Function.
@@ -2325,32 +2233,30 @@ paths:
       description: Retrieve a specific Function Version resource.
       operationId: FetchFunctionVersion
       parameters:
-      - description: The SID of the Service to fetch the Function Version resource
-          from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the function that is the parent of the Function Version
-          resource to fetch.
-        in: path
-        name: FunctionSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Function Version resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZN[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Function Version resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the function that is the parent of the Function Version resource to fetch.
+          in: path
+          name: FunctionSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Function Version resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZN[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2359,17 +2265,17 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.function.function_version'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - path
-      - visibility
-      - date_created
+        - sid
+        - path
+        - visibility
+        - date_created
       pathType: instance
   /v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}/Content:
     description: The code of a Function Version.
@@ -2377,32 +2283,30 @@ paths:
       description: Retrieve a the content of a specific Function Version resource.
       operationId: FetchFunctionVersionContent
       parameters:
-      - description: The SID of the Service to fetch the Function Version content
-          from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Function that is the parent of the Function Version
-          content to fetch.
-        in: path
-        name: FunctionSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
-      - description: The SID of the Function Version content to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZN[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Function Version content from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Function that is the parent of the Function Version content to fetch.
+          in: path
+          name: FunctionSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
+        - description: The SID of the Function Version content to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZN[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2411,64 +2315,63 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.function.function_version.function_version_content'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - content
+        - sid
+        - content
       pathType: instance
   /v1/Services/{ServiceSid}/Functions/{Sid}:
     delete:
       description: Delete a Function resource.
       operationId: DeleteFunction
       parameters:
-      - description: The SID of the Service to delete the Function resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Function resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to delete the Function resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Function resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
-    description: A wrapper that represents a Serverless JavaScript function and groups
-      the different  and groups the different Versions of this code.
+        - Beta
+    description: A wrapper that represents a Serverless JavaScript function and groups the different  and groups the different Versions of this code.
     get:
       description: Retrieve a specific Function resource.
       operationId: FetchFunction
       parameters:
-      - description: The SID of the Service to fetch the Function resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Function resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to fetch the Function resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Function resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2477,39 +2380,38 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.function'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Update a specific Function resource.
       operationId: UpdateFunction
       parameters:
-      - description: The SID of the Service to update the Function resource from.
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          type: string
-      - description: The SID of the Function resource to update.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ZH[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the Service to update the Function resource from.
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            type: string
+        - description: The SID of the Function resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ZH[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Function resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Function resource. It can be a maximum of 255 characters.
                   type: string
               required:
-              - FriendlyName
+                - FriendlyName
               title: UpdateFunctionRequest
               type: object
       responses:
@@ -2520,47 +2422,46 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service.function'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: instance
   /v1/Services/{Sid}:
     delete:
       description: Delete a Service resource.
       operationId: DeleteService
       parameters:
-      - description: The `sid` or `unique_name` of the Service resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: The `sid` or `unique_name` of the Service resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
-    description: The top-level resource for a Serverless application, which serves
-      as a container for the application environments.
+        - Beta
+    description: The top-level resource for a Serverless application, which serves as a container for the application environments.
     get:
       description: Retrieve a specific Service resource.
       operationId: FetchService
       parameters:
-      - description: The `sid` or `unique_name` of the Service resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: The `sid` or `unique_name` of the Service resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -2569,35 +2470,32 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     post:
       description: Update a specific Service resource.
       operationId: UpdateService
       parameters:
-      - description: The `sid` or `unique_name` of the Service resource to update.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: The `sid` or `unique_name` of the Service resource to update.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
               properties:
                 FriendlyName:
-                  description: A descriptive string that you create to describe the
-                    Service resource. It can be a maximum of 255 characters.
+                  description: A descriptive string that you create to describe the Service resource. It can be a maximum of 255 characters.
                   type: string
                 IncludeCredentials:
-                  description: Whether to inject Account credentials into a function
-                    invocation context.
+                  description: Whether to inject Account credentials into a function invocation context.
                   type: boolean
                 UiEditable:
-                  description: Whether the Service resource's properties and subresources
-                    can be edited via the UI. The default value is `false`.
+                  description: Whether the Service resource's properties and subresources can be edited via the UI. The default value is `false`.
                   type: boolean
               title: UpdateServiceRequest
               type: object
@@ -2609,20 +2507,19 @@ paths:
                 $ref: '#/components/schemas/serverless.v1.service'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://serverless.twilio.com
+      - url: https://serverless.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - friendly_name
+        - sid
+        - unique_name
+        - friendly_name
       pathType: instance
 servers:
-- url: https://serverless.twilio.com
+  - url: https://serverless.twilio.com
 x-maturity:
-- description: PLEASE NOTE that this is a Beta product that is subject to change.
-    Use it with caution.
-  name: Beta
+  - description: PLEASE NOTE that this is a Beta product that is subject to change. Use it with caution.
+    name: Beta

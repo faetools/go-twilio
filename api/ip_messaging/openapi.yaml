@@ -30,9 +30,9 @@ components:
           type: string
         type:
           enum:
-          - gcm
-          - apn
-          - fcm
+            - gcm
+            - apn
+            - fcm
           nullable: true
           type: string
         url:
@@ -142,9 +142,9 @@ components:
           type: string
         binding_type:
           enum:
-          - gcm
-          - apn
-          - fcm
+            - gcm
+            - apn
+            - fcm
           nullable: true
           type: string
         credential_sid:
@@ -240,8 +240,8 @@ components:
           type: string
         type:
           enum:
-          - public
-          - private
+            - public
+            - private
           nullable: true
           type: string
         unique_name:
@@ -513,8 +513,8 @@ components:
           type: string
         type:
           enum:
-          - channel
-          - deployment
+            - channel
+            - deployment
           nullable: true
           type: string
         url:
@@ -592,9 +592,9 @@ components:
           type: string
         binding_type:
           enum:
-          - gcm
-          - apn
-          - fcm
+            - gcm
+            - apn
+            - fcm
           nullable: true
           type: string
         credential_sid:
@@ -673,8 +673,8 @@ components:
           type: string
         notification_level:
           enum:
-          - default
-          - muted
+            - default
+            - muted
           nullable: true
           type: string
         service_sid:
@@ -685,9 +685,9 @@ components:
           type: string
         status:
           enum:
-          - joined
-          - invited
-          - not_participating
+            - joined
+            - invited
+            - not_participating
           nullable: true
           type: string
         unread_messages_count:
@@ -728,14 +728,13 @@ paths:
       description: ''
       operationId: ListCredential
       parameters:
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -771,9 +770,9 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateCredential
@@ -803,12 +802,12 @@ paths:
                 Type:
                   description: ''
                   enum:
-                  - gcm
-                  - apn
-                  - fcm
+                    - gcm
+                    - apn
+                    - fcm
                   type: string
               required:
-              - Type
+                - Type
               title: CreateCredentialRequest
               type: object
       responses:
@@ -819,52 +818,52 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.credential'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - type
+        - sid
+        - friendly_name
+        - type
       pathType: list
   /v2/Credentials/{Sid}:
     delete:
       description: ''
       operationId: DeleteCredential
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^CR[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^CR[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchCredential
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^CR[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^CR[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -873,22 +872,22 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.credential'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateCredential
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^CR[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^CR[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -922,16 +921,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.credential'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - type
+        - sid
+        - friendly_name
+        - type
       pathType: instance
   /v2/Services:
     description: 'TODO: Resource-level docs'
@@ -939,14 +938,13 @@ paths:
       description: ''
       operationId: ListService
       parameters:
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -982,9 +980,9 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateService
@@ -997,7 +995,7 @@ paths:
                   description: ''
                   type: string
               required:
-              - FriendlyName
+                - FriendlyName
               title: CreateServiceRequest
               type: object
       responses:
@@ -1008,16 +1006,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: list
   /v2/Services/{ServiceSid}/Bindings:
     description: 'TODO: Resource-level docs'
@@ -1025,41 +1023,40 @@ paths:
       description: ''
       operationId: ListBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: query
-        name: BindingType
-        schema:
-          items:
-            enum:
-            - gcm
-            - apn
-            - fcm
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
             type: string
-          type: array
-      - description: ''
-        in: query
-        name: Identity
-        schema:
-          items:
-            type: string
-          type: array
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: query
+          name: BindingType
+          schema:
+            items:
+              enum:
+                - gcm
+                - apn
+                - fcm
+              type: string
+            type: array
+        - description: ''
+          in: query
+          name: Identity
+          schema:
+            items:
+              type: string
+            type: array
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1095,70 +1092,70 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - endpoint
-      - identity
+        - sid
+        - endpoint
+        - identity
       pathType: list
   /v2/Services/{ServiceSid}/Bindings/{Sid}:
     delete:
       description: ''
       operationId: DeleteBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^BS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^BS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^BS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^BS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1167,16 +1164,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.binding'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - endpoint
-      - identity
+        - sid
+        - endpoint
+        - identity
       pathType: instance
   /v2/Services/{ServiceSid}/Channels:
     description: 'TODO: Resource-level docs'
@@ -1184,33 +1181,32 @@ paths:
       description: ''
       operationId: ListChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: query
-        name: Type
-        schema:
-          items:
-            enum:
-            - public
-            - private
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
             type: string
-          type: array
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: query
+          name: Type
+          schema:
+            items:
+              enum:
+                - public
+                - private
+              type: string
+            type: array
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1246,30 +1242,30 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1295,8 +1291,8 @@ paths:
                 Type:
                   description: ''
                   enum:
-                  - public
-                  - private
+                    - public
+                    - private
                   type: string
                 UniqueName:
                   description: ''
@@ -1311,16 +1307,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - friendly_name
+        - sid
+        - unique_name
+        - friendly_name
       pathType: list
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Invites:
     description: 'TODO: Resource-level docs'
@@ -1328,36 +1324,35 @@ paths:
       description: ''
       operationId: ListInvite
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: query
-        name: Identity
-        schema:
-          items:
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
             type: string
-          type: array
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: query
+          name: Identity
+          schema:
+            items:
+              type: string
+            type: array
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1393,28 +1388,28 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateInvite
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1430,7 +1425,7 @@ paths:
                   pattern: ^RL[0-9a-fA-F]{32}$
                   type: string
               required:
-              - Identity
+                - Identity
               title: CreateInviteRequest
               type: object
       responses:
@@ -1441,82 +1436,82 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.invite'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - identity
-      - date_created
+        - sid
+        - identity
+        - date_created
       pathType: list
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}:
     delete:
       description: ''
       operationId: DeleteInvite
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IN[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IN[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchInvite
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IN[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IN[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -1525,16 +1520,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.invite'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - identity
-      - date_created
+        - sid
+        - identity
+        - date_created
       pathType: instance
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Members:
     description: 'TODO: Resource-level docs'
@@ -1542,36 +1537,35 @@ paths:
       description: ''
       operationId: ListMember
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: query
-        name: Identity
-        schema:
-          items:
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
             type: string
-          type: array
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: query
+          name: Identity
+          schema:
+            items:
+              type: string
+            type: array
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1607,36 +1601,36 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateMember
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1671,7 +1665,7 @@ paths:
                   pattern: ^RL[0-9a-fA-F]{32}$
                   type: string
               required:
-              - Identity
+                - Identity
               title: CreateMemberRequest
               type: object
       responses:
@@ -1682,84 +1676,84 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.member'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - identity
-      - date_created
+        - sid
+        - identity
+        - date_created
       pathType: list
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}:
     delete:
       description: ''
       operationId: DeleteMember
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchMember
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -1768,42 +1762,42 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.member'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateMember
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1844,16 +1838,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.member'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - identity
-      - date_created
+        - sid
+        - identity
+        - date_created
       pathType: instance
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Messages:
     description: 'TODO: Resource-level docs'
@@ -1861,37 +1855,36 @@ paths:
       description: ''
       operationId: ListMessage
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: query
-        name: Order
-        schema:
-          enum:
-          - asc
-          - desc
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: query
+          name: Order
+          schema:
+            enum:
+              - asc
+              - desc
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -1927,36 +1920,36 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateMessage
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -1998,91 +1991,91 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.message'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - from
-      - to
-      - date_created
+        - sid
+        - from
+        - to
+        - date_created
       pathType: list
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}:
     delete:
       description: ''
       operationId: DeleteMessage
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IM[0-9a-fA-F]{32}$
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IM[0-9a-fA-F]{32}$
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchMessage
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IM[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IM[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2091,45 +2084,45 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.message'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateMessage
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IM[0-9a-fA-F]{32}$
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IM[0-9a-fA-F]{32}$
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2165,17 +2158,17 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.message'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - from
-      - to
-      - date_created
+        - sid
+        - from
+        - to
+        - date_created
       pathType: instance
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Webhooks:
     description: 'TODO: Resource-level docs'
@@ -2183,29 +2176,28 @@ paths:
       description: ''
       operationId: ListChannelWebhook
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -2241,28 +2233,28 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateChannelWebhook
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2282,8 +2274,8 @@ paths:
                 Configuration.Method:
                   description: ''
                   enum:
-                  - GET
-                  - POST
+                    - GET
+                    - POST
                   type: string
                 Configuration.RetryCount:
                   description: ''
@@ -2299,12 +2291,12 @@ paths:
                 Type:
                   description: ''
                   enum:
-                  - webhook
-                  - trigger
-                  - studio
+                    - webhook
+                    - trigger
+                    - studio
                   type: string
               required:
-              - Type
+                - Type
               title: CreateChannelWebhookRequest
               type: object
       responses:
@@ -2315,81 +2307,81 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.channel_webhook'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - configuration
+        - sid
+        - configuration
       pathType: list
   /v2/Services/{ServiceSid}/Channels/{ChannelSid}/Webhooks/{Sid}:
     delete:
       description: ''
       operationId: DeleteChannelWebhook
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^WH[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^WH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchChannelWebhook
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^WH[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^WH[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2398,37 +2390,37 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.channel_webhook'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateChannelWebhook
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^WH[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^WH[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2448,8 +2440,8 @@ paths:
                 Configuration.Method:
                   description: ''
                   enum:
-                  - GET
-                  - POST
+                    - GET
+                    - POST
                   type: string
                 Configuration.RetryCount:
                   description: ''
@@ -2472,71 +2464,71 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel.channel_webhook'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - configuration
+        - sid
+        - configuration
       pathType: instance
   /v2/Services/{ServiceSid}/Channels/{Sid}:
     delete:
       description: ''
       operationId: DeleteChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -2545,36 +2537,36 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2610,16 +2602,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.channel'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - unique_name
-      - friendly_name
+        - sid
+        - unique_name
+        - friendly_name
       pathType: instance
   /v2/Services/{ServiceSid}/Roles:
     description: 'TODO: Resource-level docs'
@@ -2627,23 +2619,22 @@ paths:
       description: ''
       operationId: ListRole
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -2679,22 +2670,22 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateRole
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2711,13 +2702,13 @@ paths:
                 Type:
                   description: ''
                   enum:
-                  - channel
-                  - deployment
+                    - channel
+                    - deployment
                   type: string
               required:
-              - FriendlyName
-              - Type
-              - Permission
+                - FriendlyName
+                - Type
+                - Permission
               title: CreateRoleRequest
               type: object
       responses:
@@ -2728,70 +2719,70 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.role'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - type
+        - sid
+        - friendly_name
+        - type
       pathType: list
   /v2/Services/{ServiceSid}/Roles/{Sid}:
     delete:
       description: ''
       operationId: DeleteRole
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^RL[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^RL[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchRole
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^RL[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^RL[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -2800,31 +2791,31 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.role'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateRole
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^RL[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^RL[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2836,7 +2827,7 @@ paths:
                     type: string
                   type: array
               required:
-              - Permission
+                - Permission
               title: UpdateRoleRequest
               type: object
       responses:
@@ -2847,16 +2838,16 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.role'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - type
+        - sid
+        - friendly_name
+        - type
       pathType: instance
   /v2/Services/{ServiceSid}/Users:
     description: 'TODO: Resource-level docs'
@@ -2864,23 +2855,22 @@ paths:
       description: ''
       operationId: ListUser
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -2916,30 +2906,30 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: CreateUser
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -2961,7 +2951,7 @@ paths:
                   pattern: ^RL[0-9a-fA-F]{32}$
                   type: string
               required:
-              - Identity
+                - Identity
               title: CreateUserRequest
               type: object
       responses:
@@ -2972,65 +2962,65 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user'
           description: Created
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - identity
-      - date_created
+        - sid
+        - friendly_name
+        - identity
+        - date_created
       pathType: list
   /v2/Services/{ServiceSid}/Users/{Sid}:
     delete:
       description: ''
       operationId: DeleteUser
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchUser
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -3039,36 +3029,36 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateUser
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          type: string
-      - description: The X-Twilio-Webhook-Enabled HTTP request header
-        in: header
-        name: X-Twilio-Webhook-Enabled
-        schema:
-          enum:
-          - 'true'
-          - 'false'
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            type: string
+        - description: The X-Twilio-Webhook-Enabled HTTP request header
+          in: header
+          name: X-Twilio-Webhook-Enabled
+          schema:
+            enum:
+              - 'true'
+              - 'false'
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -3096,17 +3086,17 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - identity
-      - date_created
+        - sid
+        - friendly_name
+        - identity
+        - date_created
       pathType: instance
   /v2/Services/{ServiceSid}/Users/{UserSid}/Bindings:
     description: 'TODO: Resource-level docs'
@@ -3114,40 +3104,39 @@ paths:
       description: ''
       operationId: ListUserBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: query
-        name: BindingType
-        schema:
-          items:
-            enum:
-            - gcm
-            - apn
-            - fcm
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
             type: string
-          type: array
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: query
+          name: BindingType
+          schema:
+            items:
+              enum:
+                - gcm
+                - apn
+                - fcm
+              type: string
+            type: array
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -3183,83 +3172,83 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - endpoint
-      - identity
-      - binding_type
+        - sid
+        - endpoint
+        - identity
+        - binding_type
       pathType: list
   /v2/Services/{ServiceSid}/Users/{UserSid}/Bindings/{Sid}:
     delete:
       description: ''
       operationId: DeleteUserBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^BS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^BS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchUserBinding
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^BS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^BS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -3268,17 +3257,17 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user.user_binding'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - endpoint
-      - identity
-      - binding_type
+        - sid
+        - endpoint
+        - identity
+        - binding_type
       pathType: instance
   /v2/Services/{ServiceSid}/Users/{UserSid}/Channels:
     description: 'TODO: Resource-level docs'
@@ -3286,29 +3275,28 @@ paths:
       description: ''
       operationId: ListUserChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -3344,75 +3332,75 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - channel_sid
-      - status
+        - channel_sid
+        - status
       pathType: list
   /v2/Services/{ServiceSid}/Users/{UserSid}/Channels/{ChannelSid}:
     delete:
       description: ''
       operationId: DeleteUserChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchUserChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -3421,34 +3409,34 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user.user_channel'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateUserChannel
       parameters:
-      - description: ''
-        in: path
-        name: ServiceSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
-      - description: ''
-        in: path
-        name: UserSid
-        required: true
-        schema:
-          type: string
-      - description: ''
-        in: path
-        name: ChannelSid
-        required: true
-        schema:
-          type: string
+        - description: ''
+          in: path
+          name: ServiceSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
+        - description: ''
+          in: path
+          name: UserSid
+          required: true
+          schema:
+            type: string
+        - description: ''
+          in: path
+          name: ChannelSid
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -3465,8 +3453,8 @@ paths:
                 NotificationLevel:
                   description: ''
                   enum:
-                  - default
-                  - muted
+                    - default
+                    - muted
                   type: string
               title: UpdateUserChannelRequest
               type: object
@@ -3478,51 +3466,51 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service.user.user_channel'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - channel_sid
-      - status
+        - channel_sid
+        - status
       pathType: instance
   /v2/Services/{Sid}:
     delete:
       description: ''
       operationId: DeleteService
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     description: 'TODO: Resource-level docs'
     get:
       description: ''
       operationId: FetchService
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -3531,22 +3519,22 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     post:
       description: ''
       operationId: UpdateService
       parameters:
-      - description: ''
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^IS[0-9a-fA-F]{32}$
-          type: string
+        - description: ''
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^IS[0-9a-fA-F]{32}$
+            type: string
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -3658,12 +3646,12 @@ paths:
                 WebhookMethod:
                   description: ''
                   enum:
-                  - HEAD
-                  - GET
-                  - POST
-                  - PATCH
-                  - PUT
-                  - DELETE
+                    - HEAD
+                    - GET
+                    - POST
+                    - PATCH
+                    - PUT
+                    - DELETE
                   type: string
               title: UpdateServiceRequest
               type: object
@@ -3675,19 +3663,19 @@ paths:
                 $ref: '#/components/schemas/ip_messaging.v2.service'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - GA
+        - GA
     servers:
-    - url: https://ip-messaging.twilio.com
+      - url: https://ip-messaging.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - friendly_name
-      - date_created
+        - sid
+        - friendly_name
+        - date_created
       pathType: instance
 servers:
-- url: https://ip-messaging.twilio.com
+  - url: https://ip-messaging.twilio.com
 x-maturity:
-- description: This product is Generally Available.
-  name: GA
+  - description: This product is Generally Available.
+    name: GA

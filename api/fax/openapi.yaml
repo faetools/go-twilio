@@ -14,22 +14,20 @@ components:
           nullable: true
           type: string
         date_created:
-          description: The ISO 8601 formatted date and time in GMT when the resource
-            was created
+          description: The ISO 8601 formatted date and time in GMT when the resource was created
           format: date-time
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 formatted date and time in GMT when the resource
-            was last updated
+          description: The ISO 8601 formatted date and time in GMT when the resource was last updated
           format: date-time
           nullable: true
           type: string
         direction:
           description: The direction of the fax
           enum:
-          - inbound
-          - outbound
+            - inbound
+            - outbound
           nullable: true
           type: string
         duration:
@@ -45,8 +43,7 @@ components:
           nullable: true
           type: object
         media_sid:
-          description: The SID of the FaxMedia resource that is associated with the
-            Fax
+          description: The SID of the FaxMedia resource that is associated with the Fax
           maxLength: 34
           minLength: 34
           nullable: true
@@ -71,9 +68,9 @@ components:
         quality:
           description: The quality of the fax
           enum:
-          - standard
-          - fine
-          - superfine
+            - standard
+            - fine
+            - superfine
           nullable: true
           type: string
         sid:
@@ -86,16 +83,16 @@ components:
         status:
           description: The status of the fax
           enum:
-          - queued
-          - processing
-          - sending
-          - delivered
-          - receiving
-          - received
-          - no-answer
-          - busy
-          - failed
-          - canceled
+            - queued
+            - processing
+            - sending
+            - delivered
+            - receiving
+            - received
+            - no-answer
+            - busy
+            - failed
+            - canceled
           nullable: true
           type: string
         to:
@@ -127,8 +124,7 @@ components:
           nullable: true
           type: string
         date_updated:
-          description: The ISO 8601 date and time in GMT when the resource was last
-            updated
+          description: The ISO 8601 date and time in GMT when the resource was last updated
           format: date-time
           nullable: true
           type: string
@@ -176,42 +172,35 @@ paths:
       description: Retrieve a list of all faxes.
       operationId: ListFax
       parameters:
-      - description: Retrieve only those faxes sent from this phone number, specified
-          in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
-        in: query
-        name: From
-        schema:
-          type: string
-      - description: Retrieve only those faxes sent to this phone number, specified
-          in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
-        in: query
-        name: To
-        schema:
-          type: string
-      - description: Retrieve only those faxes with a `date_created` that is before
-          or equal to this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-          format.
-        in: query
-        name: DateCreatedOnOrBefore
-        schema:
-          format: date-time
-          type: string
-      - description: Retrieve only those faxes with a `date_created` that is later
-          than this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-          format.
-        in: query
-        name: DateCreatedAfter
-        schema:
-          format: date-time
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: Retrieve only those faxes sent from this phone number, specified in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
+          in: query
+          name: From
+          schema:
+            type: string
+        - description: Retrieve only those faxes sent to this phone number, specified in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.
+          in: query
+          name: To
+          schema:
+            type: string
+        - description: Retrieve only those faxes with a `date_created` that is before or equal to this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          in: query
+          name: DateCreatedOnOrBefore
+          schema:
+            format: date-time
+            type: string
+        - description: Retrieve only those faxes with a `date_created` that is later than this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          in: query
+          name: DateCreatedAfter
+          schema:
+            format: date-time
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -247,18 +236,18 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://fax.twilio.com
+      - url: https://fax.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - from
-      - to
-      - status
-      - date_created
+        - sid
+        - from
+        - to
+        - status
+        - date_created
       pathType: list
   /v1/Faxes/{FaxSid}/Media:
     description: 'TODO: Resource-level docs'
@@ -266,23 +255,22 @@ paths:
       description: Retrieve a list of all fax media instances for the specified fax.
       operationId: ListFaxMedia
       parameters:
-      - description: The SID of the fax with the FaxMedia resources to read.
-        in: path
-        name: FaxSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^FX[0-9a-fA-F]{32}$
-          type: string
-      - description: How many resources to return in each list page. The default is
-          50, and the maximum is 1000.
-        in: query
-        name: PageSize
-        schema:
-          maximum: 1000
-          minimum: 1
-          type: integer
+        - description: The SID of the fax with the FaxMedia resources to read.
+          in: path
+          name: FaxSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^FX[0-9a-fA-F]{32}$
+            type: string
+        - description: How many resources to return in each list page. The default is 50, and the maximum is 1000.
+          in: query
+          name: PageSize
+          schema:
+            maximum: 1000
+            minimum: 1
+            type: integer
       responses:
         '200':
           content:
@@ -318,71 +306,69 @@ paths:
                 type: object
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://fax.twilio.com
+      - url: https://fax.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - content_type
-      - url
+        - content_type
+        - url
       pathType: list
   /v1/Faxes/{FaxSid}/Media/{Sid}:
     delete:
       description: Delete a specific fax media instance.
       operationId: DeleteFaxMedia
       parameters:
-      - description: The SID of the fax with the FaxMedia resource to delete.
-        in: path
-        name: FaxSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^FX[0-9a-fA-F]{32}$
-          type: string
-      - description: The Twilio-provided string that uniquely identifies the FaxMedia
-          resource to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ME[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the fax with the FaxMedia resource to delete.
+          in: path
+          name: FaxSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^FX[0-9a-fA-F]{32}$
+            type: string
+        - description: The Twilio-provided string that uniquely identifies the FaxMedia resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ME[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     description: 'TODO: Resource-level docs'
     get:
       description: Fetch a specific fax media instance.
       operationId: FetchFaxMedia
       parameters:
-      - description: The SID of the fax with the FaxMedia resource to fetch.
-        in: path
-        name: FaxSid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^FX[0-9a-fA-F]{32}$
-          type: string
-      - description: The Twilio-provided string that uniquely identifies the FaxMedia
-          resource to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^ME[0-9a-fA-F]{32}$
-          type: string
+        - description: The SID of the fax with the FaxMedia resource to fetch.
+          in: path
+          name: FaxSid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^FX[0-9a-fA-F]{32}$
+            type: string
+        - description: The Twilio-provided string that uniquely identifies the FaxMedia resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^ME[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -391,53 +377,51 @@ paths:
                 $ref: '#/components/schemas/fax.v1.fax.fax_media'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://fax.twilio.com
+      - url: https://fax.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - content_type
-      - url
+        - content_type
+        - url
       pathType: instance
   /v1/Faxes/{Sid}:
     delete:
       description: Delete a specific fax and its associated media.
       operationId: DeleteFax
       parameters:
-      - description: The Twilio-provided string that uniquely identifies the Fax resource
-          to delete.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^FX[0-9a-fA-F]{32}$
-          type: string
+        - description: The Twilio-provided string that uniquely identifies the Fax resource to delete.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^FX[0-9a-fA-F]{32}$
+            type: string
       responses:
         '204':
           description: The resource was deleted successfully.
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     description: 'TODO: Resource-level docs'
     get:
       description: Fetch a specific fax.
       operationId: FetchFax
       parameters:
-      - description: The Twilio-provided string that uniquely identifies the Fax resource
-          to fetch.
-        in: path
-        name: Sid
-        required: true
-        schema:
-          maxLength: 34
-          minLength: 34
-          pattern: ^FX[0-9a-fA-F]{32}$
-          type: string
+        - description: The Twilio-provided string that uniquely identifies the Fax resource to fetch.
+          in: path
+          name: Sid
+          required: true
+          schema:
+            maxLength: 34
+            minLength: 34
+            pattern: ^FX[0-9a-fA-F]{32}$
+            type: string
       responses:
         '200':
           content:
@@ -446,22 +430,21 @@ paths:
                 $ref: '#/components/schemas/fax.v1.fax'
           description: OK
       security:
-      - accountSid_authToken: []
+        - accountSid_authToken: []
       x-maturity:
-      - Beta
+        - Beta
     servers:
-    - url: https://fax.twilio.com
+      - url: https://fax.twilio.com
     x-twilio:
       defaultOutputProperties:
-      - sid
-      - from
-      - to
-      - status
-      - date_created
+        - sid
+        - from
+        - to
+        - status
+        - date_created
       pathType: instance
 servers:
-- url: https://fax.twilio.com
+  - url: https://fax.twilio.com
 x-maturity:
-- description: PLEASE NOTE that this is a Beta product that is subject to change.
-    Use it with caution.
-  name: Beta
+  - description: PLEASE NOTE that this is a Beta product that is subject to change. Use it with caution.
+    name: Beta
