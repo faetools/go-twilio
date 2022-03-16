@@ -1,0 +1,7 @@
+name: go-twilio
+version: 0.0.1
+repoType: GoLibrary
+library:
+  subType: ThirdPartyAPI
+team: firestarters
+devToolVersion: 0.0.4
